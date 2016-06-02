@@ -1,0 +1,22 @@
+.option {
+    padding: 50px;
+    div {
+        padding: 70px 0;
+        border: 1px solid gray;
+    }
+}
+.add:hover {
+    background-color: #449d44;
+    color: #fff;
+}
+.edit:hover {
+    background-color: #ec971f;
+    color: #fff;
+}
+.delete:hover {
+    background-color: #d9534f;
+    color: #fff;
+}
+.menu .glyphicon {
+    font-size: 30px;
+}
