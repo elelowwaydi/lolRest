@@ -4,7 +4,11 @@ $(function() {
 
 // cache elements
 const $records = $('#records');
+const $add = $('#add');
+const $edit = $("#edit");
+const $delete = $('#delete');
 
+//get and display records
 function displayRecords() {
   $.ajax({
     type: 'GET',
@@ -18,3 +22,15 @@ function displayRecords() {
     }
   });
 }
+
+$add.hover(function() {
+  $(this).find(".glyphicon").toggleClass("scale");
+});
+
+$edit.hover(function() {
+  $(this).find(".glyphicon").toggleClass("write");
+});
+
+$delete.hover(function() {
+  $(this).find(".glyphicon").toggleClass("rotate");
+});
