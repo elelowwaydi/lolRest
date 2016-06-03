@@ -12,6 +12,7 @@ const $age = $('#age');
 const $name = $('#name');
 const $drinks = $('#drinks');
 const $addModal = $('#addModal');
+
 //get and display records
 function displayRecords() {
     $.ajax({
@@ -64,8 +65,23 @@ function retreiveData() {
         type: 'GET',
         url: 'http://rest.learncode.academy/api/lloydaaron/friends',
         success: function(data) {
-            var last = data.length -1;
+            var last = data.length - 1;
             $records.append('<tr><td>' + data[last].id + '</td><td>' + data[last].name + '</td><td>' + data[last].age + '</td><td>' + data[last].drink + '</td></tr>');
         }
     });
 }
+
+
+
+// select data
+$(document).on("click", "tr", function() {
+    $('tr').css("background-color", "#fff");
+    $(this).css("background-color", "#F4F4F4");
+    $edit.addClass("editable");
+    $delete.addClass("deletable");
+});
+
+$("html").not("tr").click(function() {
+  $edit.removeClass("editable");
+  $delete.removeClass("deletable");
+});
