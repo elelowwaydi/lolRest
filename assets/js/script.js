@@ -51,9 +51,21 @@ $btnAdd.click(function() {
             drink: $drinks.val()
         },
         success: function(data) {
-            console.log("Friend added!", data); //the new item is returned with an ID
+            retreiveData();
         }
     });
 
     $addModal.modal('toggle');
 });
+
+// retreive last record added
+function retreiveData() {
+    $.ajax({
+        type: 'GET',
+        url: 'http://rest.learncode.academy/api/lloydaaron/friends',
+        success: function(data) {
+            var last = data.length -1;
+            $records.append('<tr><td>' + data[last].id + '</td><td>' + data[last].name + '</td><td>' + data[last].age + '</td><td>' + data[last].drink + '</td></tr>');
+        }
+    });
+}
