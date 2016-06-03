@@ -1,4 +1,4 @@
 # lolRest
 Learning to REST
 
-The free practice RESTful API brought to you by LearnCode.academy...oh snap
+The free practice RESTful API brought by LearnCode.academy...oh snap
