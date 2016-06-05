@@ -119,8 +119,10 @@ $btnEdit.click(function() {
         url: "http://rest.learncode.academy/api/lloydaaron/friends/" + dataId,
         success: function(data) {
             console.log('Record Updated Successfully!');
-            $('#records tr').detach();
-            displayRecords();
+            var editThis = $records.find(".data-row:contains("+dataId+")");
+            editThis.find(".data-name").html(newDataName);
+            editThis.find(".data-age").html(newDataAge);
+            editThis.find(".data-drink").html(newDataDrink);
         },
         error: function() {
             alert("error updating!");
